@@ -1,0 +1,58 @@
+body {
+  font-family: Helvetica, serif;
+  background: rgb(187, 187, 187);
+}
+
+table {
+  background: #fff;
+  padding: 8px;
+  border-collapse: collapse;
+}
+
+tbody,
+tfoot {
+  text-align: right;
+}
+
+tbody td a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+}
+
+tbody td a:hover {
+  color: rgb(80, 80, 80);
+}
+
+.btn {
+  border: none;
+  font-size: 16px;
+  background-color: #000;
+  color: #fff;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn:hover {
+  background-color: rgb(70, 70, 70);
+}
+
+tr .btn:first-child {
+  border-right: 1px solid #fff;
+}
+
+.btn.active {
+  background-color: rgb(1, 100, 165);
+}
+
+tfoot {
+  border-top: 1px solid black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.super a {
+  color: rgb(165, 1, 1);
+}
