@@ -1,9 +1,14 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const mode = process.env.NODE_ENV;
+const API_URL = {
+  production: JSON.stringify("https://topnames.herokuapp.com"),
+  development: JSON.stringify("http://localhost:3001"),
+};
 
 module.exports = {
   entry: path.resolve(__dirname, "./src/index.js"),
@@ -25,11 +30,14 @@ module.exports = {
     },
   },
   plugins: [
-    mode === "production" ? new CleanWebpackPlugin() : () => {},
+    mode === "production" ? new CleanWebpackPlugin() : () => {console.log(mode)},
     new HtmlWebpackPlugin({
       title: "Solita assignment",
       template: "public/index.html",
       inject: true,
+    }),
+    new webpack.DefinePlugin({
+      API_URL: API_URL[mode],
     }),
   ],
   optimization: {

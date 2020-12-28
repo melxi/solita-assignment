@@ -8,11 +8,11 @@ function Names() {
   const [active, setActive] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/names${sortBy}`)
+    fetch(`${API_URL}/api/names${sortBy}`)
       .then((res) => res.json())
       .then((data) => setNames(data));
 
-    fetch(`http://localhost:3001/api/names/count`)
+    fetch(`${API_URL}/api/names/count`)
       .then((res) => res.json())
       .then((data) => setCount(data));
   }, [sortBy]);

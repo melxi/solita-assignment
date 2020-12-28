@@ -4,7 +4,7 @@ function Name(props) {
   const [name, setName] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/names/${props.match.params.name}`)
+    fetch(`${API_URL}/api/names/${props.match.params.name}`)
       .then((res) => res.json())
       .then((data) => setName(data[0]));
   }, []);
